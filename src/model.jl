@@ -285,7 +285,7 @@ function getparams(model::BUGSModel)
         model.untransformed_param_length
     end
 
-    param_vals = Vector{Float64}(undef, param_length)
+    param_vals = Vector{Union{Float64, Int64}}(undef, param_length)
     pos = 1
     for v in model.parameters
         if !model.transformed
